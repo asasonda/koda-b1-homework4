@@ -1,0 +1,15 @@
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\bin\Debug\net10.0\Warteg.Console.exe
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\bin\Debug\net10.0\Warteg.Console.deps.json
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\bin\Debug\net10.0\Warteg.Console.runtimeconfig.json
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\bin\Debug\net10.0\Warteg.Console.dll
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\bin\Debug\net10.0\Warteg.Console.pdb
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.GeneratedMSBuildEditorConfig.editorconfig
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.AssemblyInfoInputs.cache
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.AssemblyInfo.cs
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.csproj.CoreCompileInputs.cache
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.sourcelink.json
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.dll
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\refint\Warteg.Console.dll
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.pdb
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\Warteg.Console.genruntimeconfig.cache
+D:\koda\C#\koda-b1-homework4\koda-b1-homework4-.net\src\Warteg.Console\obj\Debug\net10.0\ref\Warteg.Console.dll

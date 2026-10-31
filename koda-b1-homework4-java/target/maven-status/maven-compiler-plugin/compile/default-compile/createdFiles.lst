@@ -1,6 +1,8 @@
 com\koda\Menu.class
+com\koda\App.class
 com\koda\services\MenuService.class
 com\koda\Cart.class
+com\koda\CashPayment.class
 com\koda\Category.class
-com\koda\App.class
 com\koda\services\CartService.class
+com\koda\services\CheckoutService.class

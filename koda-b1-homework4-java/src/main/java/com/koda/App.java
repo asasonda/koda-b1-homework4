@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.koda.services.CartService;
+import com.koda.services.CheckoutService;
 import com.koda.services.MenuService;
 
 /**
@@ -29,43 +30,43 @@ public class App
 
         List<Cart> cart = new ArrayList<>();
         CartService cartControll = new  CartService();
+        CheckoutService checkoutService = new CheckoutService();
 
+        boolean runningSystem = true;
 
-        System.out.println("========== WELCOME TO KODA FOOD ========== ");
-        System.out.println("1. Lihat Menu");
-        System.out.println("2. Keranjang");
-        System.out.println("3. Checkout");
-        System.out.println("4. Exit");
-
-        System.out.println();
-        System.out.print("Silahkan pilih menu: ");
-        int welcome = input.nextInt();
-        System.out.println();
-        
-        switch (welcome) {
-            case 1:
-                menuService.showMenus(menus);
-
-                cartControll.addCart(menus, cart, input);
-
-                if(cart.isEmpty()){
+        while (runningSystem) {
+            System.out.println("========== WELCOME TO KODA FOOD ========== ");
+            System.out.println("1. Lihat Menu");
+            System.out.println("2. Keranjang");
+            System.out.println("3. Checkout");
+            System.out.println("4. Exit");
+    
+            System.out.println();
+            System.out.print("Silahkan pilih menu: ");
+            int welcome = input.nextInt();
+            System.out.println();
+            
+            switch (welcome) {
+                case 1:
+                    menuService.showMenus(menus);
+                    cartControll.addCart(menus, cart, input);
                     break;
-                }
-
-                double total = cartControll.showCart(cart);
-
-                // System.out.print("Pilih makanan: ");
-                // int makanan = input.nextInt();
-
-                // System.out.print("Masukkan quantity: ");
-                // int quantity = input.nextInt();
-
-                // cart.add(new Cart(menus.get(makanan - 1).getMenuId(), menus.get(makanan - 1).getMenuName(), menus.get(makanan - 1).getPrice(), quantity));
-                
-                
-
-            default:
-                break;
+    
+                case 2:
+                    cartControll.showCart(cart);
+                    break;
+                case 3:
+                    checkoutService.checkout(cart, input);
+                    break;
+                case 4:
+                    System.out.println("jkdvn");
+                    runningSystem = false;
+                    break;
+                default:
+                    System.out.println("Menu tidak tersedia");
+                    break;
+            }  
         }
+        input.close();
     }
 }

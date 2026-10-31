@@ -6,6 +6,8 @@ import java.util.Scanner;
 import com.koda.Menu;
 import com.koda.Cart;
 
+import com.koda.services.CheckoutService;
+
 public class CartService {
     public void addCart(List<Menu> menus, List<Cart> cart, Scanner input){
         
@@ -46,18 +48,36 @@ public class CartService {
         System.out.println("Berhasil ditambahkan ke keranjang!");
         System.out.println();
 
+        showCart(cart);
+
+        System.out.print("Checkout (Y/n): ");
+        String comfirmCheckOut = input.next();
+
+        if(comfirmCheckOut.equalsIgnoreCase("Y")){
+            CheckoutService checkoutService = new CheckoutService();
+
+            checkoutService.checkout(cart, input);
+        }
     }
+    
 
     public double showCart(List<Cart> cart){
         System.out.println("============= KERANJANG ============= ");
+        if(cart.isEmpty()){
+            System.out.println("Cart is Empty");
+            return 0;
+        }
 
         double total = 0;
         int i = 0;
         for (Cart keranjang : cart) {
-            System.out.print(i+1 + ". ");
-            keranjang.showCart();
+            System.out.println(i+1 + ". " + keranjang.getMenu().getMenuName() + " (x" + keranjang.getQuantity() + ") " + keranjang.getSubtotal());
+            total += keranjang.getSubtotal();
         }
 
+        System.out.println();
+        System.out.println("Total Belanja: Rp." +  total);
+        System.out.println();
         return total;
     }
 }

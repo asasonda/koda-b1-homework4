@@ -19,12 +19,12 @@ public class App
         Scanner input = new Scanner(System.in);
 
         List<Menu> menus = new ArrayList<>();
-        menus.add(new Category("1", "Nasi Putih", 4000, "Makanan"));
-        menus.add(new Category("2", "Ayam Gulai", 8000, "Makanan"));
-        menus.add(new Category("3", "Telur Dadar", 5000, "Makanan"));
-        menus.add(new Category("4", "Tempe Orek", 4000, "Makanan"));
-        menus.add(new Category("5", "Teh Manis Panas/Dingin", 4000, "Minuman"));
-        menus.add(new Category("6", "Air Putih", 0, "Minuman"));
+        menus.add(new Category("1", "Nasi Putih", 4000, 30, "Makanan"));
+        menus.add(new Category("2", "Ayam Gulai", 8000, 25, "Makanan"));
+        menus.add(new Category("3", "Telur Dadar", 5000, 15, "Makanan"));
+        menus.add(new Category("4", "Tempe Orek", 4000, 10, "Makanan"));
+        menus.add(new Category("5", "Teh Manis Panas/Dingin", 4000, 12, "Minuman"));
+        menus.add(new Category("6", "Air Putih", 0, 10, "Minuman"));
 
         MenuService menuService = new MenuService();
 
@@ -35,7 +35,7 @@ public class App
         boolean runningSystem = true;
 
         while (runningSystem) {
-            System.out.println("========== WELCOME TO KODA FOOD ========== ");
+            System.out.println("========== WELCOME TO WARTEG ========== ");
             System.out.println("1. Lihat Menu");
             System.out.println("2. Keranjang");
             System.out.println("3. Checkout");

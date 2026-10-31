@@ -1,5 +1,7 @@
 com\koda\Menu.class
+com\koda\QrisPayment.class
 com\koda\App.class
+com\koda\interfaces\Paymentable.class
 com\koda\services\MenuService.class
 com\koda\Cart.class
 com\koda\CashPayment.class

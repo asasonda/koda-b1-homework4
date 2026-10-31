@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.koda.Cart;
+import com.koda.CashPayment;
+import com.koda.QrisPayment;
+import com.koda.interfaces.Paymentable;
 
 public class CheckoutService {
     
@@ -13,10 +16,9 @@ public class CheckoutService {
             return;
         }
 
-        double total = 0;
-        for (Cart keranjang : cart) {
-            total += keranjang.getSubtotal();
-        }
+        double total = cart.stream()
+                .mapToDouble(Cart::getSubtotal)
+                .sum();
 
         System.out.println();
 
@@ -29,45 +31,45 @@ public class CheckoutService {
         int metode = input.nextInt();
 
         double uang = 0;
-        boolean successCheckout = false;
+
+        Paymentable payment;
 
         switch (metode) {
             case 1:
-                System.out.print("Masukan uang: ");
-                uang = input.nextDouble();
-
-                if(uang < total){
-                    System.out.println("Uang tidak cukup!");
-                    return ;
-                }
-
-                System.out.println();
-                successCheckout = true;
+                payment = new CashPayment();
                 break;
         
+            case 2:
+                payment = new QrisPayment();
+                break;
+
             default:
                 System.out.println("Metode tidak valid");
-                break;
+                return;
         }
 
-        if(successCheckout){
-            showReceipt(cart, total, uang);
+        boolean success = payment.pay(total, input);
+        if (!success) {
+            System.out.println("Checkout gagal!");
+            return;
         }
+
+        showReceipt(cart, total, payment);
+        cart.clear();
 
     }
 
-    public void showReceipt(List<Cart> cart, double total, double uang){
+    public void showReceipt(List<Cart> cart, double total, Paymentable payment){
         System.out.println("=============== RECEIPT =============== ");
         for (Cart cartReceipt : cart) {
-            System.out.println(cartReceipt.getMenu().getMenuName()+ " (x" + cartReceipt.getQuantity() + ") Rp." + cartReceipt.getSubtotal());
+            System.out.println(cartReceipt.getMenu().getMenuName()+ " (x" + cartReceipt.getQuantity() + ") Rp." + cartReceipt.getMenu().getPrice());
         }
 
         System.out.println("---------------------------------------");
         System.out.println("Total: Rp."+ total);
-        System.out.println("Bayar: Rp."+ uang);
-
-        double kembalian = uang - total;
-        System.out.println("kemalian: Rp." + kembalian);
+        System.out.println("Bayar: Rp."+ payment.getPaidAmount());
+        System.out.println("kemalian: Rp." + payment.getChange());
+        System.out.println("Metode Pembayaran: "+ payment.getPaymentName());
 
         System.out.println();
         System.out.println("Terima kasih sudah membeli!");

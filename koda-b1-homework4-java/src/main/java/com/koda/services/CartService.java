@@ -71,7 +71,7 @@ public class CartService {
         double total = 0;
         int i = 0;
         for (Cart keranjang : cart) {
-            System.out.println(i+1 + ". " + keranjang.getMenu().getMenuName() + " (x" + keranjang.getQuantity() + ") " + keranjang.getSubtotal());
+            System.out.println(i+1 + ". " + keranjang.getMenu().getMenuName() + " (x" + keranjang.getQuantity() + ") " + keranjang.getMenu().getPrice());
             total += keranjang.getSubtotal();
         }
 

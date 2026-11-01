@@ -56,7 +56,6 @@ public class CheckoutService {
 
         showReceipt(cart, total, payment);
         cart.clear();
-
     }
 
     public void showReceipt(List<Cart> cart, double total, Paymentable payment){

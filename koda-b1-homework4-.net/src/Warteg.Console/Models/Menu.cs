@@ -10,4 +10,23 @@ public class Menu(string name, decimal price, int stock)
     {
         return $"{Name} Rp.{Price:N0} (Stock: {Stock})";
     }
+
+    public void ReduceStock(int quantity)
+    {
+        if(Stock <= 0 || quantity < 0)
+        {
+            throw new ArgumentException("Stok not valid");
+        }
+
+        Stock -= quantity;
+    }
+
+    public void AddStock(int quantity)
+    {
+        if(quantity <= 0)
+        {
+            throw new ArgumentException("Quantity tidak valid");
+        }
+        Stock += quantity;
+    }
 }

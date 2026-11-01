@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Warteg.Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e1d773cdb9375ad3e7cba1be3f0c3c6c49ffafb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+09b9e4ab95d7aa2ef02319cf53e7708147dfaeb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Warteg.Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Warteg.Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
